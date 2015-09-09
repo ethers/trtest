@@ -21,7 +21,7 @@ contract("Standard_Token_Factory", function(accounts) {
           console.log('@@@ coinbal: ', newToken.coinBalanceOf.call)
 
 
-          return newToken.coinBalance.call();
+          return newToken.foo.call();
 
           // return newToken.coinBalanceOf.call(accounts[0]);
 
@@ -33,5 +33,16 @@ contract("Standard_Token_Factory", function(accounts) {
           assert.strictEqual(result.c[0], 10000);
           done();
       }).catch(done);
+  });
+
+
+  it("calls foo", function(done) {
+    Standard_Token.new(10000, {from: accounts[0]}).then(function(ctr) {
+        return ctr.foo.call();
+    }).then(function (result) {
+        //console.log(result);
+        assert.strictEqual(result.c[0], 15);
+        done();
+    }).catch(done);
   });
 });

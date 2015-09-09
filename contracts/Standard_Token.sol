@@ -1,6 +1,4 @@
-import "Coin";
-
-contract Standard_Token is Coin {
+contract Standard_Token {
 
     function Standard_Token(uint _initialAmount) {
         balances[msg.sender] = _initialAmount;
@@ -23,6 +21,10 @@ contract Standard_Token is Coin {
 
     function coinBalanceOf(address _addr) constant returns (uint _r) {
         return balances[_addr];
+    }
+
+    function foo() constant returns (uint _r) {
+        return 15;
     }
 
     mapping (address => uint) public balances;
