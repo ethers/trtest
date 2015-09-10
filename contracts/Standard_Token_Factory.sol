@@ -2,11 +2,16 @@ import "Standard_Token";
 
 contract Standard_Token_Factory {
 
-    function createStandardToken() returns (uint) {
+    event TokenContractCreated(address addr);
 
-        /*address newTokenAddr = address(new Standard_Token());
-        Standard_Token newToken = Standard_Token(newTokenAddr);*/
+
+    function createStandardToken() {
+        address newTokenAddr = address(new Standard_Token());
+        TokenContractCreated(newTokenAddr);
+        /*Standard_Token newToken = Standard_Token(newTokenAddr);*/
+    }
+
+    function simpleCall() returns (uint) {
         return 99;
-        /*return newTokenAddr;*/
     }
 }
