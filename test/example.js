@@ -16,43 +16,51 @@ contract("Standard_Token_Factory", function(accounts) {
       var factory = Standard_Token_Factory.at(Standard_Token_Factory.deployed_address);
 
 
-    var rvalFilter = factory.TokenContractCreated(null,
-      { fromBlock: 'latest', toBlock: 'latest'});
+    // var rvalFilter = factory.TokenContractCreated(null,
+    //   { fromBlock: 'latest', toBlock: 'latest'});
+    //
+    // console.log('@@@@ rvalFilter:', rvalFilter)
+    //
+    // rvalFilter.watch(function(err, res) {
+    //   try {
+    //     if (err) {
+    //       callback(err);
+    //       console.log('@@@ rvalFilter err: ', err)
+    //       return;
+    //     }
+    //
+    //     console.log('@@@ rvalFilter res: ', res)
+    //
+    //     var eventArgs = res.args;
+    //
+    //     console.log('@@@@@ eventArgs.rval: ', eventArgs.rval)
+    //
+    //     done();
+    //
+    //     // var ticketId = eventArgs.rval.toNumber();
+    //     // if (ticketId > 0) {
+    //     //   callback(null, ticketId);
+    //     // }
+    //     // else {
+    //     //   callback('Offer could not be created');
+    //     // }
+    //   }
+    //   finally {
+    //     console.log('@@@ filter stopWatching...')
+    //     rvalFilter.stopWatching();
+    //   }
+    // });
 
-    console.log('@@@@ rvalFilter:', rvalFilter)  
 
-    rvalFilter.watch(function(err, res) {
-      try {
-        if (err) {
-          callback(err);
-          console.log('@@@ rvalFilter err: ', err)
-          return;
-        }
+      factory.createStandardToken({from: accounts[0]}).then(function(tx) {
+          console.log('@@@@ tx: ', tx)
+          var receipt = web3.eth.getTransactionReceipt(tx);
 
-        console.log('@@@ rvalFilter res: ', res)
+          console.log('@@@@ receipt: ', receipt)
 
-        var eventArgs = res.args;
-
-        console.log('@@@@@ eventArgs.rval: ', eventArgs.rval)
-
-        done();
-
-        // var ticketId = eventArgs.rval.toNumber();
-        // if (ticketId > 0) {
-        //   callback(null, ticketId);
-        // }
-        // else {
-        //   callback('Offer could not be created');
-        // }
-      }
-      finally {
-        console.log('@@@ filter stopWatching...')
-        rvalFilter.stopWatching();
-      }
-    });
-
-
-      factory.createStandardToken({from: accounts[0]});
+          var logs = receipt.logs;
+          console.log('@@@@ logs: ', logs)
+      });
 
       // .then(function(tx) {
       //     console.log('@@@@ tx: ', tx)
@@ -81,3 +89,49 @@ contract("Standard_Token_Factory", function(accounts) {
   //   }).catch(done);
   // });
 });
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
