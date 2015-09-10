@@ -60,6 +60,8 @@ contract("Standard_Token_Factory", function(accounts) {
 
           var logs = receipt.logs;
           console.log('@@@@ logs: ', logs)
+
+          done();
       });
 
       // .then(function(tx) {

@@ -11,6 +11,14 @@ contract Standard_Token_Factory {
         /*Standard_Token newToken = Standard_Token(newTokenAddr);*/
     }
 
+    function makeT() returns (address) {
+        address newTokenAddr = address(new Standard_Token());
+        /*TokenContractCreated(newTokenAddr);*/
+        /*Standard_Token newToken = Standard_Token(newTokenAddr);*/
+        return newTokenAddr;
+    }
+
+
     function simpleCall() returns (uint) {
         return 99;
     }
