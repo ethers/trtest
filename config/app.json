@@ -22,6 +22,6 @@
   ],
   "rpc": {
     "host": "localhost",
-    "port": 8087
+    "port": 8081
   }
 }
