@@ -1,17 +1,17 @@
-/*import "Standard_Token";
-import "Standard_Token_Factory";*/
+import "Standard_Token";
+import "Standard_Token_Factory";
 
 contract TokenTester {
     address tokenContractAddress;
 
     /*function writeTokenContractAddress() {*/
     function TokenTester() {
-        /*address factoryAddr = address(new Standard_Token_Factory());
+        address factoryAddr = address(new Standard_Token_Factory());
         Standard_Token_Factory tokenFactory = Standard_Token_Factory(factoryAddr);
 
-        address tcAddr = tokenFactory.makeT();*/
+        address tcAddr = tokenFactory.makeT();
 
-        tokenContractAddress = 15;
+        tokenContractAddress = tcAddr;
 
         /*Standard_Token tokenContract = Standard_Token(tcAddr);
         return tokenContract.foo();*/
