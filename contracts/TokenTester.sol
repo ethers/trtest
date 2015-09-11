@@ -16,4 +16,8 @@ contract TokenTester {
         /*Standard_Token tokenContract = Standard_Token(tcAddr);
         return tokenContract.foo();*/
     }
+
+    function getTCAddr() returns (address) {
+      return tokenContractAddress;
+    }
 }
