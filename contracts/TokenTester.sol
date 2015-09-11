@@ -7,6 +7,6 @@ contract TokenTester {
         address factoryAddr = address(new Standard_Token_Factory());
         Standard_Token_Factory tokenFactory = Standard_Token_Factory(factoryAddr);
 
-        tokenContractAddress = tokenFactory.makeT();
+        tokenContractAddress = tokenFactory.createStandardToken(931);
     }
 }
