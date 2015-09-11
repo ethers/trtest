@@ -2,7 +2,7 @@ contract("TokenTester", function(accounts) {
 
   it("TODO", function(done) {
       var tester = TokenTester.at(TokenTester.deployed_address);
-      tester.getTCAddr.call()
+      tester.tokenContractAddress.call()
       .then(function (tokenContractAddr) {
           console.log('tokenContractAddr', tokenContractAddr);
 

@@ -2,22 +2,12 @@ import "Standard_Token";
 import "Standard_Token_Factory";
 
 contract TokenTester {
-    address tokenContractAddress;
+    address public tokenContractAddress;
 
-    /*function writeTokenContractAddress() {*/
     function TokenTester() {
         address factoryAddr = address(new Standard_Token_Factory());
         Standard_Token_Factory tokenFactory = Standard_Token_Factory(factoryAddr);
 
-        address tcAddr = tokenFactory.makeT();
-
-        tokenContractAddress = tcAddr;
-
-        /*Standard_Token tokenContract = Standard_Token(tcAddr);
-        return tokenContract.foo();*/
-    }
-
-    function getTCAddr() returns (address) {
-      return tokenContractAddress;
+        tokenContractAddress = tokenFactory.makeT();
     }
 }
