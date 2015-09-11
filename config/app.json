@@ -17,7 +17,7 @@
     "images/": "images/"
   },
   "deploy": [
-    "Standard_Token_Factory",
+    //"Standard_Token_Factory",
     "TokenTester"
   ],
   "rpc": {
