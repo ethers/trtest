@@ -6,15 +6,17 @@ contract Standard_Token_Factory {
 
 
     function createStandardToken() {
-        address newTokenAddr = address(new Standard_Token());
+        address newTokenAddr = address(new Standard_Token(33));
         TokenContractCreated(newTokenAddr);
         /*Standard_Token newToken = Standard_Token(newTokenAddr);*/
     }
 
     function makeT() returns (address) {
-        address newTokenAddr = address(new Standard_Token());
+        address newTokenAddr = address(new Standard_Token(777));
         /*TokenContractCreated(newTokenAddr);*/
-        /*Standard_Token newToken = Standard_Token(newTokenAddr);*/
+        Standard_Token newToken = Standard_Token(newTokenAddr);
+        newToken.foo();
+
         return newTokenAddr;
     }
 

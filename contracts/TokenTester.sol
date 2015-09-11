@@ -1,4 +1,3 @@
-import "Standard_Token";
 import "Standard_Token_Factory";
 
 contract TokenTester {
